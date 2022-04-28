@@ -1,0 +1,13 @@
+name: 'Get deployment info'
+description: 'Gets deployment conditions and environment names'
+inputs: {}
+outputs:
+  shouldDeploy:
+    description: 'Whether a deployment is necessary'
+  deployEnvironmentName:
+    description: 'The name of the deployment environment to deploy to'
+  environmentName:
+    description: 'The name of the environment to build for'
+runs:
+  using: 'node16'
+  main: 'index.js'
