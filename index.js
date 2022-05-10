@@ -23,7 +23,7 @@ try {
 		shouldDeploy = true;
 	}
 
-	core.setOutput('shouldDeploy', shouldDeploy);
+	core.setOutput('shouldDeploy', shouldDeploy.toString());
 	core.setOutput('deployEnvironmentName', deployEnvironmentName);
 	core.setOutput('environmentName', environmentName);
 } catch (error) {
