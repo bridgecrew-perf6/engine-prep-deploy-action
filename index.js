@@ -19,11 +19,15 @@ try {
 	}
 
 	let shouldDeploy = false;
-	if (deployEnvironmentName != null && github.eventName == 'push') {
+	if (deployEnvironmentName != null && github.context.eventName == 'push') {
 		shouldDeploy = true;
 	}
 
-	core.setOutput('shouldDeploy', shouldDeploy.toString());
+	core.info("Should deploy: " + shouldDeploy.toString());
+	core.info("Deploy environment: " + deployEnvironmentName);
+	core.info("Environment: " + environmentName);
+
+	core.setOutput('shouldDeploy', shouldDeploy);
 	core.setOutput('deployEnvironmentName', deployEnvironmentName);
 	core.setOutput('environmentName', environmentName);
 } catch (error) {
